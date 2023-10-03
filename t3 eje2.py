@@ -1,41 +1,29 @@
-#gestion de productos
-class product:
-    def __init__(self,name , cost, category):
-        self.name=name
-        self.cost=cost
-        self.category=category
-    def sHOWdETAILS(self):
-        print(f"el producto {self.name} posee un costo de {self.cost} esta dentrro de la categoria {self.category}")
-        return ""
-class electronics(product):
-    def __init__(self , name , cost , category , consumption , num_serial):
-        super().__init__( name , cost , category)
-        self.consumption=consumption
-        self.num_serial=num_serial
-    def sHOWdETAILS(self):
-        print(f"el producto {self.name} posee un costo de {self.cost} esta dentrro de la categoria {self.category} el cual posee un consumo de {self.consumption} y su numero de serie es {self.num_serial}")
-        return ""
-class alimentation(product):
-    def __init__(self,name,cost,category,cosecha_F,vencimiento_F):
-        super().__init__(name,cost,category)
-        self.cosecha_F=cosecha_F
-        self.vencimiento_F=vencimiento_F
-    def sHOWdETAILS(self):
-        print(f"el producto {self.name} posee un costo de {self.cost} esta dentrro de la categoria {self.category} la fecha en al cual fue cosechado es en {self.cosecha_F} la fecha en la cual este producto se malograra es {self.vencimiento_F}")
-        return ""
-class clothes(product):
-    def __init__(self, name, cost, category, marca, coleccion):
-        super().__init__(name, cost, category)
-        self.marca=marca
-        self.coleccion=coleccion
-    def sHOWdETAILS(self):
-        print(f"el producto {self.name} posee un costo de {self.cost} esta dentrro de la categoria {self.category} la marca a la cual pertenece el producto es {self.marca} a su ves este es de la coleccion {self.coleccion}")
-        return ""
-p01 = electronics("computador","10","tecnologia","8.000.000 w/h","755")
-print(p01.sHOWdETAILS())
-p02= alimentation("tomate","1000","alimentacion","2022-02-11","2022-02-18")
-print(p02.sHOWdETAILS())
-p03= clothes("pantalon mariano dross","3500000","ropa","supreme","colaboraciones mariano dross")
-print(p03.sHOWdETAILS())
-        
-        
+#sitema de empleados empresa
+class empleado:
+    def __init__(self,nombre, edad, salario):
+        self.nombre=nombre
+        self.edad=edad
+        self.salario=salario
+
+class jefededepartamento(empleado):
+    def __init__(self, nombre, edad, salario,departamento_a,):
+        super().__init__(nombre, edad, salario)
+        self.dep_a=departamento_a
+    def describir_rol(self):
+        print(f"el lider de el departamento de {self.dep_a} es el ser responsable de las operaciones del departamento")
+class supervisor(empleado):
+    def __init__(self, nombre, edad, salario,grupo_a):
+        super().__init__(nombre, edad, salario)
+        self.grup_a=grupo_a
+    def describir_rol(self):
+        print(f"el supervisor del grupo {self.grup_a} se encarga de vigilar y gestionar a su equipo. También comunica a la gerencia el desempeño o necesidades de las personas a su cargo. Se trata de un rol enfocado principalmente en la administración y ejecución de tareas")
+class secretario(empleado):
+    def __init__(self, nombre, edad, salario, encargado):
+        super().__init__(nombre, edad, salario)
+        self.encargado=encargado
+    def describir_rolf(self):
+        print(f"la funcion de un secretario es prestar apoyo administrativo a los directivos y otros profesionales. Sus responsabilidades incluyen usar el ordenador para redactar cartas, informes y otros documentos, atender llamadas telefónicas, organizar reuniones, llevar la agenda de su jefe y atender a las visitas.")
+
+e01=jefededepartamento("carla moya",65,500432,"informatica")
+e02=supervisor("esteban quito",43,500000,"A1")
+e03=secretario("martin bombin",54,1500000,"esteban quito")
