@@ -1,29 +1,51 @@
-#sitema de empleados empresa
-class empleado:
-    def __init__(self,nombre, edad, salario):
+#sitema de animales
+
+class animal:
+    def __init__(self,nombre,edad,soni):
         self.nombre=nombre
         self.edad=edad
-        self.salario=salario
+        self.soni=soni
+    def sonido(self):
+        print(f"mi sonido es {self.soni}")
+        return ""
 
-class jefededepartamento(empleado):
-    def __init__(self, nombre, edad, salario,departamento_a,):
-        super().__init__(nombre, edad, salario)
-        self.dep_a=departamento_a
-    def describir_rol(self):
-        print(f"el lider de el departamento de {self.dep_a} es el ser responsable de las operaciones del departamento")
-class supervisor(empleado):
-    def __init__(self, nombre, edad, salario,grupo_a):
-        super().__init__(nombre, edad, salario)
-        self.grup_a=grupo_a
-    def describir_rol(self):
-        print(f"el supervisor del grupo {self.grup_a} se encarga de vigilar y gestionar a su equipo. También comunica a la gerencia el desempeño o necesidades de las personas a su cargo. Se trata de un rol enfocado principalmente en la administración y ejecución de tareas")
-class secretario(empleado):
-    def __init__(self, nombre, edad, salario, encargado):
-        super().__init__(nombre, edad, salario)
-        self.encargado=encargado
-    def describir_rolf(self):
-        print(f"la funcion de un secretario es prestar apoyo administrativo a los directivos y otros profesionales. Sus responsabilidades incluyen usar el ordenador para redactar cartas, informes y otros documentos, atender llamadas telefónicas, organizar reuniones, llevar la agenda de su jefe y atender a las visitas.")
-
-e01=jefededepartamento("carla moya",65,500432,"informatica")
-e02=supervisor("esteban quito",43,500000,"A1")
-e03=secretario("martin bombin",54,1500000,"esteban quito")
+class canino(animal):
+    def __init__(self, nombre, edad, soni ,nombre_cientifico, rama):
+        super().__init__(nombre, edad, soni)
+        self.n_cientifico=nombre_cientifico
+        self.rama=rama
+    def sonido(self):
+        return super().sonido()
+    
+    def quien_soy(self):
+        print(f"mi nombre comun es {self.nombre} pero la comunidad cientifica me conoce como {self.n_cientifico} y pertenesco a los caninos en la rama {self.rama}")
+        return ""
+    
+class felino(animal):
+    def __init__(self, nombre, edad, soni , tipo_de_felino, maulla_o_ruje):
+        super().__init__(nombre, edad, soni)
+        self.tipo_de_f=tipo_de_felino
+        self.miau_o_rawr=maulla_o_ruje
+    def sonido(self):
+        return super().sonido()
+    def que_digo_y_soy(self):
+        print(f"mi nombre es {self.nombre} dentro de los felinos soy un {self.tipo_de_f} y yo {self.miau_o_rawr}")
+class ave(animal):
+    def __init__(self, nombre, edad, soni,dieta,habitad):
+        super().__init__(nombre, edad, soni)
+        self.dieta=dieta
+        self.habitad=habitad
+    def sonido(self):
+        return super().sonido()
+    def que_como_y_donde_vivo(self):
+        print(f"soy {self.nombre} y mi sieta es princcipalmente {self.dieta} y  mi habitad es {self.habitad} ")
+        return ""
+anima=canino("chihuahua", "3" , "wau wau" , " Canis lupus familiaris" , "canis familiaris")
+print(anima.quien_soy())
+print(anima.sonido())
+animq1=felino("leon",7,"rawr rawr", "gran felino" , "ruje")
+print(animq1.que_digo_y_soy())
+print(animq1.sonido())
+anima2=ave("buitre", 1 , "graaa graaa" , "carroñera" , "terrenos montañosos, del sur de Europa y norte de África hasta el centro de Asia")
+print(anima2.sonido())
+print(anima2.que_como_y_donde_vivo())
